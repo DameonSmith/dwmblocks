@@ -1,20 +1,33 @@
 //Modify this file to change what commands output to your statusbar, and recompile using the make command.
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
-	{"", "cat ~/.pacupdate | sed /📦0/d",					0,		9},
 	
-	{"🧠", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
+    {"", "~/.local/bin/statusbar/battery",						5,		0},
 
-	{"", "~/bin/statusbar/volume",						0,		10},
+    {"", "~/.local/bin/statusbar/clock",						5,		0},
 
-	{"☀", "xbacklight | sed 's/\\..*//'",					0,		11},
-	
-	{"", "~/bin/statusbar/battery",						5,		0},
+    {"", "~/.local/bin/statusbar/cpu", 10, 0},
+    
+    {"", "~/.local/bin/statusbar/crypto", 0, 0},
 
-	{"🌡", "sensors | awk '/^temp1:/{print $2}'",				5,		0},
+    {"", "~/.local/bin/statusbar/help-icon", 0, 0},
 
-	{"", "~/bin/statusbar/clock",						5,		0},
+    {"", "~/.local/bin/statusbar/internet", 5, 0},
+
+    /*{"", "~/.local/bin/statusbar/memory", 1, 0},*/
+
+    /*{"", "~/.local/bin/statusbar/pacpackages", 1, 0},*/
+
+    /*{"", "~/.local/bin/statusbar/popupgrade", 1, 0},*/
+
+    {"", "~/.local/bin/statusbar/torrent", 1, 0},
+
+    {"", "~/.local/bin/statusbar/volume", 1, 0},
+
+    {"", "~/.local/bin/statusbar/weather", 1, 0}
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
 static char delim = '|';
+
+
